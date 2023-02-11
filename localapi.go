@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"net"
 	"net/http"
+	"net/netip"
 	"time"
 
 	"github.com/prometheus/client_golang/prometheus"
@@ -35,7 +36,7 @@ type interestingPeerStatusSubset struct {
 	HostName     string
 	DNSName      string
 	OS           string
-	TailscaleIPs []netaddr.IP
+	TailscaleIPs []netip.Addr
 	Tags         []string `json:",omitempty"`
 }
 
